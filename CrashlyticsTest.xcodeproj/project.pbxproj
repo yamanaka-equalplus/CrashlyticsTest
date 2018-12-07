@@ -23,12 +23,13 @@
 		0EAA2C3221BA5D9B00857895 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EAA2C2A21BA5D9A00857895 /* FIRAnalyticsConnector.framework */; };
 		0EAA2C3321BA5D9B00857895 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EAA2C2B21BA5D9A00857895 /* FirebaseInstanceID.framework */; };
 		0EAA2C3421BA5D9B00857895 /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EAA2C2C21BA5D9A00857895 /* FirebaseCoreDiagnostics.framework */; };
+		0EAA2C3C21BA78FB00857895 /* iOSSDK-extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAA2C3B21BA78FB00857895 /* iOSSDK-extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0EAA2BFE21BA553100857895 /* CrashlyticsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrashlyticsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EAA2C0121BA553100857895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0EAA2C0321BA553100857895 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0EAA2C0321BA553100857895 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ViewControllers/ViewController.swift; sourceTree = "<group>"; };
 		0EAA2C0621BA553100857895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0EAA2C0821BA553300857895 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EAA2C0B21BA553300857895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 		0EAA2C2C21BA5D9A00857895 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
 		0EAA2C3521BA5EB200857895 /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
 		0EAA2C3921BA5EF900857895 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		0EAA2C3B21BA78FB00857895 /* iOSSDK-extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "iOSSDK-extensions.swift"; path = "Base/iOSSDK-extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				0EAA2C1421BA556C00857895 /* 必須 */,
+				0EAA2C3A21BA784D00857895 /* 基盤 */,
 				0EAA2C1921BA55CE00857895 /* 画面 */,
 			);
 			path = CrashlyticsTest;
@@ -158,6 +161,14 @@
 				0EAA2C2921BA5D9A00857895 /* nanopb.framework */,
 			);
 			path = Analytics;
+			sourceTree = "<group>";
+		};
+		0EAA2C3A21BA784D00857895 /* 基盤 */ = {
+			isa = PBXGroup;
+			children = (
+				0EAA2C3B21BA78FB00857895 /* iOSSDK-extensions.swift */,
+			);
+			name = "基盤";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EAA2C3C21BA78FB00857895 /* iOSSDK-extensions.swift in Sources */,
 				0EAA2C0421BA553100857895 /* ViewController.swift in Sources */,
 				0EAA2C0221BA553100857895 /* AppDelegate.swift in Sources */,
 			);
