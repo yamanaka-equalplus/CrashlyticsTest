@@ -30,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CrashlyticsDelegate {
 	func crashlyticsDidDetectReport(forLastExecution report: CLSReport, completionHandler: @escaping (Bool) -> Void) {
 		print("•\(type(of: self)).\(#function) ·report=\(report.logString)")
 		
+		let value = UUID().uuidString
+		report.setObjectValue(value, forKey: "last_breakpoint")
+		
 		DispatchQueue.main.async{
 			UIAlertController.alert(
 				title: "\(type(of: self)).\(#function)",
