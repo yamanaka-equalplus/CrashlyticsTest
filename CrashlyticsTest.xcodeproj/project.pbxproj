@@ -12,6 +12,8 @@
 		0EAA2C0721BA553100857895 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EAA2C0521BA553100857895 /* Main.storyboard */; };
 		0EAA2C0921BA553300857895 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EAA2C0821BA553300857895 /* Assets.xcassets */; };
 		0EAA2C0C21BA553300857895 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EAA2C0A21BA553300857895 /* LaunchScreen.storyboard */; };
+		0EAA2C1D21BA57E000857895 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EAA2C1B21BA57E000857895 /* Fabric.framework */; };
+		0EAA2C1E21BA57E000857895 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EAA2C1C21BA57E000857895 /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		0EAA2C0821BA553300857895 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EAA2C0B21BA553300857895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EAA2C0D21BA553300857895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EAA2C1B21BA57E000857895 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		0EAA2C1C21BA57E000857895 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EAA2C1E21BA57E000857895 /* Crashlytics.framework in Frameworks */,
+				0EAA2C1D21BA57E000857895 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				0EAA2C0021BA553100857895 /* CrashlyticsTest */,
+				0EAA2C1A21BA57E000857895 /* Crashlytics */,
 				0EAA2BFF21BA553100857895 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,6 +88,15 @@
 			name = "画面";
 			sourceTree = "<group>";
 		};
+		0EAA2C1A21BA57E000857895 /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				0EAA2C1C21BA57E000857895 /* Crashlytics.framework */,
+				0EAA2C1B21BA57E000857895 /* Fabric.framework */,
+			);
+			path = Crashlytics;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,6 +107,7 @@
 				0EAA2BFA21BA553100857895 /* Sources */,
 				0EAA2BFB21BA553100857895 /* Frameworks */,
 				0EAA2BFC21BA553100857895 /* Resources */,
+				0EAA2C1F21BA581000857895 /* Run Script - Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -139,13 +156,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EAA2C0C21BA553300857895 /* LaunchScreen.storyboard in Resources */,
 				0EAA2C0921BA553300857895 /* Assets.xcassets in Resources */,
+				0EAA2C0C21BA553300857895 /* LaunchScreen.storyboard in Resources */,
 				0EAA2C0721BA553100857895 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0EAA2C1F21BA581000857895 /* Run Script - Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "Run Script - Crashlytics";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/Crashlytics/Fabric.framework/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0EAA2BFA21BA553100857895 /* Sources */ = {
@@ -301,6 +340,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3TF8L5Q29R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Crashlytics",
+				);
 				INFOPLIST_FILE = CrashlyticsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -319,6 +362,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3TF8L5Q29R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Crashlytics",
+				);
 				INFOPLIST_FILE = CrashlyticsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
